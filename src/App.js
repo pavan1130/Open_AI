@@ -4,6 +4,7 @@ import { Box, IconButton, Paper, Stack, Typography } from "@mui/material";
 import Sidebar from "./sidebar";
 import { Send } from "@mui/icons-material";
 import { useEffect, useState } from "react";
+import { Mic, MicOff } from "@mui/icons-material";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -11,6 +12,7 @@ function App() {
   const [messages, setMessages] = useState([]);
   const [currentResult, setCurrentResult] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isMicOn, setIsMicOn] = useState(false);
 
   function handleChatInput(event) {
     const { target } = event;
@@ -76,6 +78,9 @@ function App() {
 
   console.log(currentChatType);
 
+  const toggleMic = () => {
+    setIsMicOn((prev) => !prev);
+  };
   return (
     <Stack direction={"row"} height="100vh">
       <Box
@@ -163,7 +168,7 @@ function App() {
             border: "1px solid #e3e3e3",
             position: "absolute",
             bottom: "20px",
-            width: "50%",
+            width: "70%",
             marginLeft: "auto",
             marginRight: "auto",
             left: "0px",
@@ -175,10 +180,21 @@ function App() {
           }}
           onSubmit={handleSubmit}
         >
+          <IconButton
+            sx={{
+              p: "10px",
+              backgroundColor: "rgba(0,0,0,.04)",
+              borderRight: "1px solid #f2f2f2",
+              color: "#000",
+            }}
+            onClick={toggleMic}
+          >
+            {isMicOn ? <Mic /> : <MicOff />}
+          </IconButton>
           <input
             name="chat-input"
             style={{
-              width: "100%",
+              width: "calc(100% - 10px)",
               border: "none",
               outline: "none",
               fontSize: "16px",

@@ -19,32 +19,33 @@ function Sidebar({
           border: "1px solid #fff",
           color: "#fff",
           padding: "10px 0px",
-          background: currentChatType === 'text' ? 'rgba(52, 53, 65, 1)' : "",
+          background: currentChatType === "text" ? "rgba(52, 53, 65, 1)" : "",
           "&:hover": {
             border: "1px solid #fff",
-            background: currentChatType === 'text' ? 'rgba(52, 53, 65, 1)' : "",
-        },
+            background: currentChatType === "text" ? "rgba(52, 53, 65, 1)" : "",
+          },
         }}
         onClick={() => setCurrentChatType("text")}
       >
         New Chat
       </Button>
-      <Button
+      {/* <Button
         sx={{
           border: "1px solid #fff",
           color: "#fff",
           padding: "10px 0px",
-          background: currentChatType === 'image' ? 'rgba(52, 53, 65, 1)' : "",
+          background: currentChatType === "image" ? "rgba(52, 53, 65, 1)" : "",
           margin: "20px 0px 0px 0px",
           "&:hover": {
             border: "1px solid #fff",
-            background: currentChatType === 'image' ? 'rgba(52, 53, 65, 1)' : "",
-        },
+            background:
+              currentChatType === "image" ? "rgba(52, 53, 65, 1)" : "",
+          },
         }}
         onClick={() => setCurrentChatType("image")}
       >
         Create Image
-      </Button>
+      </Button> */}
       <Button
         sx={{
           border: "1px solid #fff",
